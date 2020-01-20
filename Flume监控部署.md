@@ -22,6 +22,8 @@ bin/flume-ng agent --conf conf --conf-file conf/flume.conf --name a1 -Dflume.mon
 
 放到$GOPATH/src目录下
 
+go环境配置参考：https://www.cnblogs.com/mingyue5826/p/11550415.html
+
 #### 1.2编译flume_exporter
 
 先在https://github.com/prometheus/promu    下载该项目，放到linux上编译出promu可执行文件
