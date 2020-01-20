@@ -18,13 +18,13 @@ bin/flume-ng agent --conf conf --conf-file conf/flume.conf --name a1 -Dflume.mon
 
 #### 1.1下载flume_exporter
 
-通过git 下载https://github.com/woozhijun/flume_exporter项目，上传到linux上
+通过git 下载  https://github.com/woozhijun/flume_exporter   项目，上传到linux上
 
 放到$GOPATH/src目录下
 
 #### 1.2编译flume_exporter
 
-先在https://github.com/prometheus/promu下载该项目，放到linux上编译出promu可执行文件
+先在https://github.com/prometheus/promu    下载该项目，放到linux上编译出promu可执行文件
 
 ```
 go build -mod=vendor
@@ -111,6 +111,8 @@ curl -X POST http://localhost:9090/-/reload
 
 ## 3.Grafana图标配置
 
-https://grafana.com/grafana/dashboards/10736/revisions下载Flume监控模板
+https://grafana.com/grafana/dashboards/10736/revisions
+
+下载Flume监控模板
 
 将改模板导入Grafana
