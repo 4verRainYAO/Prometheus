@@ -75,12 +75,12 @@ http://localhost:9360/metrics
     file_sd_configs:
       - files:
         - '/usr/local/prometheus/prometheus-2.8.1.linux-amd64/config/flume-nodes.json'
-    metric_relabel_configs:
-      - source_labels: [host]
-        regex: '10.180.249.60:30000'
-        replacement: flume-192.168.112.46-34557
-        target_label: logs
-        action: replace
+  #  metric_relabel_configs:
+   #   - source_labels: [host]
+    #    regex: '10.180.249.60:30000'
+     #   replacement: flume-192.168.112.46-34557
+      #  target_label: logs
+       # action: replace
 ```
 
 #### 2.2  **flume-nodes.json文件内容如下**
