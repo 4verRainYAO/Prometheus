@@ -16,9 +16,31 @@ bin/flume-ng agent --conf conf --conf-file conf/flume.conf --name a1 -Dflume.mon
 
 ### 1.部署flume_exporter
 
+#### 1.1下载flume_exporter
+
 通过git 下载https://github.com/woozhijun/flume_exporter项目，上传到linux上
 
-#### 1.1修改flume_exporter项目下的config.yml
+放到$GOPATH/src目录下
+
+#### 1.2编译flume_exporter
+
+先在https://github.com/prometheus/promu下载该项目，放到linux上编译出promu可执行文件
+
+```
+go build -mod=vendor
+```
+
+将promu可执行文件放在gopath的bin目录下
+
+进入$GOPATH/src的flume_exporter项目，执行
+
+```
+make build
+```
+
+编译出可执行文件flume_exporter
+
+#### 1.3修改flume_exporter项目下的config.yml
 
  ```yaml
 agents:
@@ -30,11 +52,9 @@ agents:
 
 其中urls端口号要对应flume启动时暴漏的那个端口号
 
-#### 1.2 修改metrics.yml文件，这里面主要是配置的监控指标，暂时没有修改，监控了所有的指标
+#### 1.4 修改metrics.yml文件，这里面主要是配置的监控指标，暂时没有修改，监控了所有的指标
 
-#### 1.3编译flume_exporter项目出现可执行文件flume_exporter
-
-#### 1.4启动flume_exporter
+#### 1.5启动flume_exporter
 
 ```shell
 ./flume_exporter --metric-file=./metrics.yml --config-file=./config.yml &
